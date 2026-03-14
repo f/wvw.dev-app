@@ -6,6 +6,7 @@ const INJECT_CSS_JS: &str = r##"
   var css = "body, body * { -webkit-user-select: none !important; user-select: none !important; } " +
     "input, textarea, [contenteditable=\"true\"] { -webkit-user-select: text !important; user-select: text !important; } " +
     ".sidebar-brand { display: none !important; } " +
+    ".desktop-banner { display: none !important; } " +
     ".sidebar-header { padding-top: 48px !important; } " +
     ".sidebar { -webkit-app-region: drag; } " +
     ".sidebar a, .sidebar button, .sidebar input, .sidebar select, .sidebar textarea, .sidebar .nav-item, .sidebar .theme-toggle, .sidebar .about-btn { -webkit-app-region: no-drag; }";

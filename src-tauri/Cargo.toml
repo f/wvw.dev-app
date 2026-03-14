@@ -1,6 +1,6 @@
 [package]
 name = "wvw"
-version = "0.1.0"
+version = "0.2.0"
 description = "WVW — World Vibe Web desktop app"
 authors = ["fka"]
 edition = "2021"
