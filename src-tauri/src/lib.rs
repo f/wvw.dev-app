@@ -81,7 +81,7 @@ pub fn run() {
                     .resizable(true)
                     .decorations(true)
                     .initialization_script(INJECT_CSS_JS)
-                    .on_navigation(|nav_url: tauri::Url| {
+                    .on_navigation(|nav_url: &tauri::Url| {
                         let host = nav_url.host_str().unwrap_or("");
                         if host == "wvw.dev" || host == "www.wvw.dev" {
                             return true;
