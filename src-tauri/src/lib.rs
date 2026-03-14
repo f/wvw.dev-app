@@ -80,10 +80,8 @@ pub fn run() {
                     .min_inner_size(901.0, 500.0)
                     .resizable(true)
                     .decorations(true)
-                    .title_bar_style(tauri::TitleBarStyle::Overlay)
-                    .hidden_title(true)
                     .initialization_script(INJECT_CSS_JS)
-                    .on_navigation(|nav_url| {
+                    .on_navigation(|nav_url: tauri::Url| {
                         let host = nav_url.host_str().unwrap_or("");
                         if host == "wvw.dev" || host == "www.wvw.dev" {
                             return true;
@@ -114,9 +112,12 @@ pub fn run() {
 
             #[cfg(target_os = "macos")]
             {
-                builder = builder.traffic_light_position(
-                    tauri::LogicalPosition::new(16.0, 18.0),
-                );
+                builder = builder
+                    .title_bar_style(tauri::TitleBarStyle::Overlay)
+                    .hidden_title(true)
+                    .traffic_light_position(
+                        tauri::LogicalPosition::new(16.0, 18.0),
+                    );
             }
 
             builder.build()?;
